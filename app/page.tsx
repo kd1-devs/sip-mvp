@@ -1,6 +1,9 @@
 import { getAllClubs, getClubFinancialsWithYoY } from "@/lib/data/queries";
 import { DashboardClient } from "@/components/platform/dashboard-client";
 
+// Force dynamic rendering - don't try to prerender at build time
+export const dynamic = 'force-dynamic';
+
 export default async function DashboardPage() {
   // Fetch clubs on the server (all clubs for dashboard selector)
   const clubs = await getAllClubs();
